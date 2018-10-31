@@ -1,0 +1,32 @@
+server:
+  port: 8999
+
+#spring:
+#  application:
+#    name: config-client,user,zuul,address
+#  cloud:
+#    config:
+#      label: master
+#      profile: dev
+#      uri: http://localhost:8008/
+#      failFast: true
+#    discovery:
+#      enabled: true
+#      service-id: config-server
+
+# config
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8009/eureka/
+
+spring:
+  application:
+    name: zuul
+  cloud:
+    config:
+      label: master
+      profile: dev
+      discovery:
+        enabled: true
+        serviceId: config-server
